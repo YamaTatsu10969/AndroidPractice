@@ -7,9 +7,13 @@ import android.view.View
 import android.widget.TextView
 import android.widget.Toast
 import androidx.annotation.IntegerRes
+import androidx.core.view.isInvisible
+import androidx.core.view.isVisible
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
+
+    var tapFlag: Boolean = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -17,6 +21,14 @@ class MainActivity : AppCompatActivity() {
 
         tapHere.setOnClickListener {
             textView2.text = "ボタンがタップされました！！！"
+            imageView.isVisible = tapFlag
+            imageView3.isVisible = !tapFlag
+            if (tapFlag) {
+                print(tapFlag)
+
+                textView2.text = "また押して〜"
+            }
+            tapFlag = !tapFlag
         }
 
     }
