@@ -2,4 +2,6 @@
     <string name="app_name">My First App</string>
     <string name="hello_world_text">Changed the text again!</string>
     <string name="random_heading">Here is a random number between 0 and %1d.</string>
+    <string name="tap_here">ここがタップされました！</string>
+    <string name="welcome_android">Android 開発へようこそ！！！</string>
 </resources>

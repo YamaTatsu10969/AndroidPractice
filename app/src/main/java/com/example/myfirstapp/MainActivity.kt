@@ -7,12 +7,18 @@ import android.view.View
 import android.widget.TextView
 import android.widget.Toast
 import androidx.annotation.IntegerRes
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main) // 制約をつけてくれているみたい
+
+        tapHere.setOnClickListener {
+            textView2.text = "ボタンがタップされました！！！"
+        }
+
     }
 
     fun toastMe(view: View) {
@@ -22,7 +28,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun countMe(view: View) {
-        // Get the text view
+        // Get the text view // findViewById は処理コストが高い。
         val showCountTextView = findViewById<TextView>(R.id.textView)
 
         // Get the value of the text view
